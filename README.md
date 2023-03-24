@@ -1,6 +1,8 @@
 # RainbowLabel
 
-## Requirements
+## Screenshot
+
+<img src="https://github.com/QiushiZhao/RainbowLabel/blob/main/Demo.jpg" width=30% height=30%>
 
 ## Installation
 
