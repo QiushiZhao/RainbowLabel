@@ -1,0 +1,16 @@
+PODS:
+  - RainbowLabel (0.1.0)
+
+DEPENDENCIES:
+  - RainbowLabel (from `../`)
+
+EXTERNAL SOURCES:
+  RainbowLabel:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RainbowLabel: e785e738490277101c502b48c103da86cf609c15
+
+PODFILE CHECKSUM: 9f8b022ff456d718eb4ce5965b0200b506d21f17
+
+COCOAPODS: 1.11.2
