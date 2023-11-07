@@ -21,6 +21,8 @@ class ViewController: UIViewController {
                     UIColor(red: 1.0, green: 0.8, blue: 0.3, alpha: 1.0).cgColor,
                     UIColor(red: 1.0, green: 0.61, blue: 0.05, alpha: 1.0).cgColor]
     label.locations = [0, 0.58, 1]
+    label.outlineColor = .orange
+    label.outlineWidth = 4
     return label
   }()
 

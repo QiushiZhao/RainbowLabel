@@ -21,12 +21,40 @@ public final class RainbowLabel: UILabel {
     set { gradientView.gradientLayer.locations = newValue }
   }
 
+  public var outlineWidth: CGFloat = 0 {
+    didSet { setNeedsDisplay() }
+  }
+
+  public var outlineColor: UIColor? {
+    didSet { setNeedsDisplay() }
+  }
+
   private let gradientView = GradientView()
+  
 
   public override func layoutSubviews() {
     super.layoutSubviews()
     gradientView.frame = bounds
+  }
+
+  public override func drawText(in rect: CGRect) {
+    let shadowOffset = shadowOffset
+
+    let context = UIGraphicsGetCurrentContext()
+    if outlineWidth > 0 {
+      context?.setLineWidth(outlineWidth)
+      context?.setLineJoin(.round)
+      context?.setTextDrawingMode(.stroke)
+      textColor = outlineColor
+      super.drawText(in: rect)
+    }
+
+    context?.setTextDrawingMode(.fill)
     textColor = UIColor.gradientColor(gradientLayer: gradientView.gradientLayer)
+    self.shadowOffset = CGSize(width: 0, height: 0)
+    super.drawText(in: rect)
+
+    self.shadowOffset = shadowOffset
   }
 }
 
