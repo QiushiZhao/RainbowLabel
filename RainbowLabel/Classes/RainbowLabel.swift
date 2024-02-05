@@ -56,6 +56,27 @@ public final class RainbowLabel: UILabel {
 
     self.shadowOffset = shadowOffset
   }
+
+  public override var intrinsicContentSize: CGSize {
+    let contentSize = super.intrinsicContentSize
+    return CGSize(
+      width: contentSize.width == UIView.noIntrinsicMetric ? contentSize.width : contentSize.width + outlineWidth,
+      height: contentSize.height == UIView.noIntrinsicMetric ? contentSize.height : contentSize.height + outlineWidth
+    )
+  }
+
+  public override func sizeThatFits(_ size: CGSize) -> CGSize {
+    let fixSize = CGSize(
+      width: MinMax(0, size.width - outlineWidth, size.width),
+      height: MinMax(0, size.height - outlineWidth, size.height)
+    )
+    let fitted = super.sizeThatFits(fixSize)
+    return CGSize(width: fitted.width + outlineWidth, height: fitted.height + outlineWidth)
+  }
+}
+
+@inline(__always) func MinMax<T: Comparable>(_ lower: T, _ value: T, _ upper: T) -> T {
+  min(max(lower, value), upper)
 }
 
 class GradientView: UIView {

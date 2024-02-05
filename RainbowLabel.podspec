@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jerry' => 'jerry.qiushi@gmail.com' }
   s.source           = { :git => 'https://github.com/Jerry/RainbowLabel.git', :tag => s.version.to_s }
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
   s.source_files = 'RainbowLabel/Classes/**/*'
 end
