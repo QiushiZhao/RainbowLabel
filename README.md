@@ -1,5 +1,7 @@
 # RainbowLabel
 
+RainbowLabel is a simple iOS UILabel that support gradient text color and text outline.
+
 ## Screenshot
 
 <img src="https://github.com/QiushiZhao/RainbowLabel/blob/main/Demo.jpg" width=30% height=30%>
